@@ -1,0 +1,42 @@
+services:
+  # Main service for the Streamlit Web Interface
+  podcast-utilities:
+    # Builds the image using the multi-stage Dockerfile (PyArmor protection)
+    build: .
+    image: podcast-utilities:latest
+    container_name: podcast-utilities_web
+
+    # Startup command for the Streamlit interface
+    # Explicitly binding to 0.0.0.0 and port 8501 for container network access
+    command: ["streamlit", "run", "podcastUtilities.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+    # Map the host port 8501 to the container port 8501
+    # Access via http://localhost:8501 or http://<your-ip>:8501
+    ports:
+      - "8501:8501"
+
+    # Load environment variables (API keys, DB credentials, etc.)
+    env_file: .env
+
+    # Volumes ensure your data persists even if the container is updated
+    volumes:
+      - ./configuration:/app/configuration       # Persistent configuration files
+      - ./downloads:/app/downloads # Files downloaded by Selenium
+      - ./profiles:/app/profiles   # Firefox browser sessions (auth persistence)
+      - ./logs:/app/logs           # Application logs
+
+    # Automatically restart the service if it crashes or the system reboots
+    restart: always
+
+  # Background service for MQTT command monitoring
+  #mqtt-listener:
+  #  build: .
+  #  container_name: podcast-utilities_mqtt
+  #  env_file: .env
+    # Overrides the default command to run the listener script
+    # Update 'configuration/main.ini' with your specific configuration filename if needed
+  #  command: python run_listener.py configuration/main.ini
+  #  volumes:
+  #    - ./configuration:/app/configuration
+  #    - ./logs:/app/logs
+  #  restart: always

@@ -1,0 +1,57 @@
+# ==============================================================================
+# Git Ignore File - Podcast Utilities Project
+# ==============================================================================
+
+# --- Python Environment & Bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# --- IDE & Editor Settings ---
+.vscode/
+.idea/
+
+# --- Project-specific Exclusions ---
+# Ignore ALL original python source code to protect intellectual property
+*.py
+
+# Ignore local distribution and build artifacts
+dist/
+requirements.txt
+TODO.txt
+docker-compose.override.yml
+github_deployment_commands.md
+setup.cfg
+
+# --- PyArmor Protection Metadata ---
+pyarmor.gc/
+.pyarmor/
+
+# --- Streamlit Configuration ---
+.streamlit/
+
+# --- Local Scripts & Automation ---
+# Exclude the local build script from the public repository
+build_blackbox.sh
+
+# --- Configuration & Credentials ---
+# Ignore all custom .ini and .yaml files, except templates
+configuration/*.ini
+!configuration/default_config.ini
+configuration/*.yaml
+!configuration/social_network_default_template
+configuration/police & logo/
+
+# --- Local Data & Logs (Recommended) ---
+# Prevent local test data and logs from being pushed to GitHub
+downloads/
+logs/
+profiles/
+
+# --- Tools & Setup ---
+setup/
+personal_linux_bash/
