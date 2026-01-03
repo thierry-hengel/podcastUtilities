@@ -71,5 +71,5 @@ The following folders are mapped to your host machine to ensure data persistence
 ---
 
 ## 📈 Version History
-** [xx/xx/2026]: Version 1.0.0**
-* First official releaseincluding Web interface andIntegrated Docker orchestration.
+** [03/01/2026]: Version 1.0.0**
+* First official release including Web interface andIntegrated Docker orchestration.
