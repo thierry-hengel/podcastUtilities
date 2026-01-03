@@ -1,7 +1,7 @@
 services:
   # Main service for the Streamlit Web Interface
   podcast-utilities:
-    image: podcast-utilities:latest
+    image: thierryhengel/podcast-utilities:latest
     container_name: podcast-utilities_web
 
     # Startup command for the Streamlit interface
