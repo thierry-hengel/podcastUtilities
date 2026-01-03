@@ -9,7 +9,7 @@ services:
     command: ["streamlit", "run", "podcastUtilities.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
     # Map the host port 8501 to the container port 8501
-    # Access via http://localhost:8501 or http://<your-ip>:8501
+    # Access via http://localhost:8501 or http://<server-ip_address>:8501
     ports:
       - "8501:8501"
 
