@@ -1,8 +1,6 @@
 services:
   # Main service for the Streamlit Web Interface
   podcast-utilities:
-    # Builds the image using the multi-stage Dockerfile (PyArmor protection)
-    build: .
     image: podcast-utilities:latest
     container_name: podcast-utilities_web
 
