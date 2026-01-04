@@ -21,7 +21,7 @@ env/
 
 # --- Local Scripts & Maintenance ---
 # Do not include the dev build script inside the production image
-build_blackbox.sh
+deploy_new_version.sh
 
 # --- Local Data & Persistence ---
 # Exclude local media, logs, and profiles (handled via Docker Volumes)
@@ -36,7 +36,7 @@ configuration/
 setup/
 !setup/Firefox
 TODO.txt
-github_deployment_commands.md
+_how_to_deploy.md
 setup.cfg
 
 # --- IDE Settings ---

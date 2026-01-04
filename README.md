@@ -70,6 +70,6 @@ The following folders are mapped to your host machine to ensure data persistence
 
 ---
 
-## 📈 Version History
-** [03/01/2026]: Version 1.0.0**
-* First official release including Web interface andIntegrated Docker orchestration.
+## 📜 Changelog
+
+All notable changes to this project are documented in the [CHANGELOG.md](./CHANGELOG.md) file.

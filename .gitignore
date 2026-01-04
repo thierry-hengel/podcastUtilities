@@ -24,7 +24,7 @@ dist/
 requirements.txt
 TODO.txt
 docker-compose.override.yml
-github_deployment_commands.md
+_how_to_deploy.md
 setup.cfg
 
 # --- PyArmor Protection Metadata ---
@@ -36,7 +36,7 @@ pyarmor.gc/
 
 # --- Local Scripts & Automation ---
 # Exclude the local build script from the public repository
-build_blackbox.sh
+deploy_new_version.sh
 
 # --- Configuration & Credentials ---
 # Ignore all custom .ini and .yaml files, except templates
