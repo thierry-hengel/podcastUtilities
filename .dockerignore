@@ -1,0 +1,43 @@
+# ==============================================================================
+# Docker Ignore File - Podcast Utilities Project
+# ==============================================================================
+
+# --- Git History (Optimization) ---
+# Exclude the .git folder to reduce build context size
+.git/
+
+# --- Python Environment & Bytecode ---
+__pycache__/
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# --- Generated files for compilation ---
+*.c
+*.so
+build/
+
+# --- Local Scripts & Maintenance ---
+# Do not include the dev build script inside the production image
+deploy_new_version.sh
+
+# --- Local Data & Persistence ---
+# Exclude local media, logs, and profiles (handled via Docker Volumes)
+downloads/
+logs/
+profiles/
+configuration/police & logo/
+
+# --- Configuration & Setup ---
+# Exclude local setup scripts and configuration folders
+configuration/
+setup/
+!setup/Firefox
+TODO.txt
+_how_to_deploy.md
+setup.cfg
+
+# --- IDE Settings ---
+.vscode/

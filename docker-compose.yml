@@ -1,0 +1,28 @@
+services:
+  # Main service for the Streamlit Web Interface
+  podcast-utilities:
+    image: thierryhengel/podcast-utilities:latest
+    container_name: podcast-utilities
+    depends_on:
+      - firefox-gui
+    command: ["streamlit", "run", "podcastUtilities.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    env_file: .env
+    environment:
+      - APP_DATA_PATH=/app/data
+    volumes:
+      - ./configuration:/app/configuration
+      - ./downloads:/app/data/Downloads
+      - ./profiles:/app/data/firefox_profile_selenium
+      - ./logs:/app/data/logs
+    restart: always
+
+  firefox-gui:
+    image: selenium/standalone-firefox:latest
+    container_name: firefox_visual_auth
+    ports:
+      - "7900:7900" # Port to access NoVNC
+    shm_size: 2gb
+    volumes:
+      - ./profiles:/home/seluser/firefox_profile_selenium
